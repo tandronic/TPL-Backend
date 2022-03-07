@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
+
+    'djstripe',
+
+    'user',
+    'article',
+    'route'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +56,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+GDAL_LIBRARY_PATH = '/opt/homebrew/lib/libgdal.dylib'
+GEOS_LIBRARY_PATH = '/opt/homebrew/lib/libgeos_c.dylib'
 
 ROOT_URLCONF = 'tpl_backend.urls'
 
@@ -80,6 +91,18 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'user.User'
+
+# dj-stripe settings
+
+STRIPE_LIVE_MODE = False
+STRIPE_LIVE_SECRET_KEY = os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_live_XXXXXXX")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_XXXXXXX")
+DJSTRIPE_WEBHOOK_SECRET = os.environ.get(
+    "DJSTRIPE_TEST_WEBHOOK_SECRET", "whsec_XXXXXXX"
+)
+DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"
+DJSTRIPE_USE_NATIVE_JSONFIELD = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -123,3 +146,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
