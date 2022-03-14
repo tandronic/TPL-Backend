@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.gis',
 
     'djstripe',
+    'leaflet',
+    'rest_framework',
+    'rest_framework.authtoken',
 
     'user',
     'article',
@@ -147,7 +150,28 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'PAGE_SIZE': 10
+}
+
+SUCEAVA_MAP_VIEW = [47.661056, 26.2537216]
+
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': SUCEAVA_MAP_VIEW,
+    'DEFAULT_ZOOM': 13,
+    'MIN_ZOOM': 5,
+    'MAX_ZOOM': 20,
+    'DEFAULT_PRECISION': 6,
+    'RESET_VIEW': False,
+}
+
+FRONTED_DOMAIN = "example.com"
+
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
