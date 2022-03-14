@@ -161,6 +161,11 @@ REST_FRAMEWORK = {
 SUCEAVA_MAP_VIEW = [47.661056, 26.2537216]
 
 LEAFLET_CONFIG = {
+    'TILES': [('Google Maps', 'http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            'attribution': '© <a href="https://www.google.com/permissions/geoguidelines/">Google Maps</a>',
+            'maxZoom': 20,
+            'subdomains': ['mt0','mt1','mt2','mt3']
+        })],
     'DEFAULT_CENTER': SUCEAVA_MAP_VIEW,
     'DEFAULT_ZOOM': 13,
     'MIN_ZOOM': 5,
