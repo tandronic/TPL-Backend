@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'leaflet',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
 
     'user',
     'article',
@@ -155,7 +156,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
-    'PAGE_SIZE': 10
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10,
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
 }
 
 SUCEAVA_MAP_VIEW = [47.661056, 26.2537216]
