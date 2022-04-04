@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'images/logoIcon.png' %}" type="">
+
+  <title> TPL Suceava </title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid ">
+          <div class="header_top_content">
+            <a class="navbar-brand d-none d-lg-flex" href="index.html">
+              <img src="{% static 'images/logo.png' %}" alt="" width="250px">
+            </a>
+            <div class="contact_nav">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  0330 401 442
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  contact@tpl-sv.ro
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand d-flex d-lg-none" href="index.html">
+              <img src="{% static 'images/logo.png' %}" alt="" width="150px">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Acasă<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="anunt.html">Anunțuri</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="despre.html"> Despre Noi</a>
+                </li>
+				<li class="nav-item">
+                  <a class="nav-link" href="despre.html"> Hărți</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="bilete.html">Bilete & Abonamente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login-page' %}" onclick="openFormCenter(this); return false;"> <i class="fa fa-user" aria-hidden="true"></i> Autentificare</a>
+                </li>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="container">
+          <div class="carousel_btn_box">
+            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+              <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-9 col-lg-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      Transport <br>
+                      Public
+                    </h1>
+                    <p>
+                      Nu poţi înţelege un oraş până când nu îi foloseşti sistemul de transport public.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Achiziționează un bilet
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-9 col-lg-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      Transport <br>
+					  Public
+                    </h1>
+                    <p>
+                      Cultura poporului se poate observa în transportul urban.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Achiziționează un bilet
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Despre Noi
+              </h2>
+            </div>
+            <p>
+              SC Transport Public Local SA și-a început activitatea propriu-zisă de la data de 1 octombrie 2005, având
+              ca acţionar Consiliul Local Suceava, cu scopul de a continua serviciul de transport public de persoane pe
+              raza municipiului Suceava, în urma intrării în faliment a fostei societăţi de transport SC TPS SA. La
+              înfiinţare SC TPL SA a preluat o parte dintre salariaţii fostei societăţi precum şi parcul auto (autobuze,
+              troleibuze, microbuze) folosit de aceasta...
+            </p>
+            <a href="./despre.html">
+              Citește mai mult
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/aboutUs-home.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container">
+          <h2>
+            Anunțuri
+          </h2>
+          <p>
+            Pentru a fi mereu la curent cu știrile noastre, verificați zilnic site-ul nostru.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/anunt1.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  REINTRODUCEREA LINIEI 1
+                </h5>
+                <p>
+                  Începând de luni 7 martie a.c. se reintroduce linia 1 de autobuz între orele 7.00 - 19.00 pentru
+                  reducerea timpului de deplasare din zona Obcini - George Enescu în zona Burdujeni.
+                  Plecările sunt din 20 în 20 minute de la Cinema Burdujeni începând cu ora 7.00.<br> Linia 1 are următorul traseu:
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../../static/images/anunt2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Stația "Bloc IRE" - MUTATĂ
+                </h5>
+                <p>
+                  Vă informăm că începând cu data de 23.02.2022 stația de autobuz "Bloc IRE" a fost mutată după colțul
+                  intersecției și este semnalizată corespunzător cu indicatoarul rutier "Stație autobuz". Prin urmare
+                  autobuzele care circulă pe liniile 4 și 5 nu vor mai opri pe colț înainte de intersecție.
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/anunt3.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ELIBERARE ABONAMENTE ELEVI
+                </h5>
+                <p>
+                  Urmare adresei Primăriei Municipiului Suceava nr. 38297/18.11.2021, prin care a fost dispusă măsura de
+                  a solicita Inspectoratului Scolar Județean Suceava listele actualizate cu data de 01.01.2022
+                  (completată lunar cu eventualele modificări) cu toți beneficiarii de abonamente de elevi
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="why_box">
+            <div class="heading_container">
+              <h2>
+                De ce să ne alegi pe noi
+              </h2>
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/w1.png' %}" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Clienți Satisfăcuți
+                  </h5>
+                  <p>
+                    Suntem fericiți atunci când clienții noștri sunt mulțumiți de serviciile noastre.
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/w2.png' %}" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Transport Rapid
+                  </h5>
+                  <p>
+                    Cu noi poți ajunge să respecți rutina ta zilnică într-un timp util. Va fi o plăcere pentru noi, dar și pentru tine!
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/w3.png' %}" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Personal Calificat
+                  </h5>
+                  <p>
+                    Ne alegem personalul cu multă grijă astfel încâ să fie totul la un nivel ridicat. Veți fi întâmpinat cu multă căldură.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                Lasă o recenzie
+              </h2>
+            </div>
+            <form action="">
+              <input type="text" placeholder="Numele tău" />
+              <input type="text" placeholder="Număr de telefon" />
+              <input type="email" placeholder="Email" />
+              <input type="text" class="message-box" placeholder="Mesaj" />
+              <div class="btn_box">
+                <button>
+                  TRIMITE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container">
+          <h2>
+            Serviciile Noastre
+          </h2>
+          <p>
+            Traseele TPL ale liniilor de autobuz și microbuz din municipiul Suceava sunt deservite de 55 de autobuze și
+            32 microbuze.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/autobuzElectric.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Autobuze electrice GRANTON
+                </h5>
+                <p>
+                  au lungimea de 12 metri și o capacitate de 107 persoane fiecare, din care 29 de locuri pe scaune, în
+                  plus fiind implementate o serie de tehnologii moderne, care sporesc securitatea călătorilor.
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/irisbus.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Autobuze IRISBUS
+                </h5>
+                <p>
+                  au lungimea de 12 metri și o capacitate de 107 persoane fiecare, din care 29 de locuri pe scaune, în
+                  plus fiind implementate o serie de tehnologii moderne, care sporesc securitatea călătorilor.
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/microbuz.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Microbuze KARSAN
+                </h5>
+                <p>
+                  dintre care 22 electrice fabricate în 2019-2020 și 10 diesel din 2015-2016 având o capacitate
+                  de 24 persoane din care 12-15 locuri pe scaune și sunt dotate cu rampă de acces pentru cărucioare.
+                </p>
+                <a href="./despre.html">
+                  Citește mai mult
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <br>
+      <div class="heading_container">
+        <h2>
+          Ce spun clienții
+        </h2>
+      </div>
+      <div class="client_container">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/client-1.jpg' %}" alt="" class="img-1">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Mark Evans
+                  </h5>
+                  <h6>
+                    Magna
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/client-2.jpg' %}" alt="" class="img-1">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Anthony White
+                  </h5>
+                  <h6>
+                    Magna
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/client-1.jpg' %}" alt="" class="img-1">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Mark Evans
+                  </h5>
+                  <h6>
+                    Magna
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="{% static 'images/client-2.jpg' %}" alt="" class="img-1">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Anthony White
+                  </h5>
+                  <h6>
+                    Magna
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_detail">
+            <h4>
+              Social Media
+            </h4>
+            <p>
+              Link-uri utile pentru <br>social media.
+            </p>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Adresă
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+				  Str. Traian Vuia nr. 5 A, Suceava, 720 021, ROMANIA
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Sună 0330 401 442
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  contact@tpl-sv.ro
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Abonează-te
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Email" />
+              <button type="submit">
+                Abonează-te
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> MADTeam
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

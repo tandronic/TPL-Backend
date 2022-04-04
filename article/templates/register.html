@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingNepal -->
+<html lang="ro" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Autentificare</title>
+	  <link href="{% static 'css/registerStyle.css' %}" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Autentificare
+            </div>
+            <div class="title signup">
+               Înregistrare
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Autentificare</label>
+               <label for="signup" class="slide signup">Înregistrare</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form id="login-form" method="post" class="login" action="{% url 'login-page' %}">
+                {% csrf_token %}
+                  <div class="field">
+                     <input type="text" placeholder="Email" required id="id_username" name="username">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Parolă" required id="id_password" name="password" >
+                  </div>
+                   {% if form.errors %}
+                    <p class=" label label-danger">
+                        Your username and password didn't match.
+                        Please try again.
+                    </p>
+                {% endif %}
+                  <div class="pass-link">
+                     <a href="#">Ai uitat parola?</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Autentifică-te">
+                  </div>
+                  <div class="signup-link">
+                     Nu ești înregistrat? <a href="">Înregistrează-te acum</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Parolă" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirmare parolă" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Înregistrează-te">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>
