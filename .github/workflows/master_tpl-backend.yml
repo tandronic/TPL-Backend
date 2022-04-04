@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'TPL-Backend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6874015316BB4119ADD107AD078A906D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_84057EDF05A2489B87F1A471F8CED553 }}
