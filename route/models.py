@@ -3,9 +3,19 @@ from django.contrib.gis.db import models
 from user.models import User
 
 
+class Bus(models.Model):
+    name = models.CharField(max_length=15)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Stop(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    bus = models.ManyToManyField(Bus, related_name='stop')
     location = models.PointField()
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -13,8 +23,9 @@ class Stop(models.Model):
 
 class Route(models.Model):
     name = models.CharField(max_length=50)
-    bus = models.CharField(max_length=15)
+    bus = models.ManyToManyField(Bus, related_name='route')
     location = models.PolygonField()
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

@@ -11,7 +11,7 @@ class Tags(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=150)
     text = models.TextField(max_length=2000)
-    tags = models.ManyToManyField(Tags)
+    tags = models.ManyToManyField(Tags, related_name='article')
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

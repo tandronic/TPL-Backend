@@ -6,7 +6,7 @@ from article.models import Article, Tags, Feedback
 class TagsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tags
-        fields = ('name',)
+        fields = ('id', 'name')
 
 
 class ArticleSerializer(serializers.ModelSerializer):

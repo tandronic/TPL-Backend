@@ -1,7 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 from rest_framework import filters
 from rest_framework import status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -20,8 +19,6 @@ class ArticleAPIView(ListAPIView):
 
 
 class FeedbackAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
 
     def post(self, request):
         serializer = FeedbackSerializer(data=request.data)

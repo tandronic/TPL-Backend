@@ -2,19 +2,25 @@ from django.contrib import admin
 
 from leaflet.admin import LeafletGeoAdmin
 
-from route.models import Route, Stop, Ticket, Payments
+from route.models import Route, Stop, Ticket, Payments, Bus
 
 
 @admin.register(Stop)
 class StopAdmin(LeafletGeoAdmin):
-    list_display = ('name', 'location')
-    search_fields = ('name', )
+    list_display = ('name', 'location', 'created_date')
+    search_fields = ('name', 'bus__name')
+
+
+@admin.register(Bus)
+class BusAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_date')
+    search_fields = ('name',)
 
 
 @admin.register(Route)
 class RouteAdmin(LeafletGeoAdmin):
-    list_display = ('name', 'bus',)
-    search_fields = ('name', 'bus')
+    list_display = ('name', 'created_date')
+    search_fields = ('name', 'bus__name')
 
 
 @admin.register(Ticket)
