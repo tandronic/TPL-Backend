@@ -63,9 +63,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-GDAL_LIBRARY_PATH = '/opt/homebrew/lib/libgdal.dylib'
-GEOS_LIBRARY_PATH = '/opt/homebrew/lib/libgeos_c.dylib'
-
 ROOT_URLCONF = 'tpl_backend.urls'
 
 TEMPLATES = [
