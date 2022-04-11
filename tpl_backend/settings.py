@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'tpl_backend.wsgi.application'
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = {
-       'default': os.environ.get('DATABASE_URL'),
+       'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
    }
 
 AUTH_USER_MODEL = 'user.User'
