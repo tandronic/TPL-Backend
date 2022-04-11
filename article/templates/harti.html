@@ -117,7 +117,35 @@
   <!-- contact section -->
   <section class="contact_section layout_padding">
     <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+            <div class="detail-box">
+                <div class="heading_container">
+                    <h2>
+                        Trasee și hărți
+                    </h2>
+                </div>
+                <p>
+                    <i class="fa fa-check test"></i> Lungimea totală a rețelei stradale acoperită de traseele
+                    autobuzelor și microbuzelor este de aproximativ 48 Km, iar pentru îmbarcarea-debarcarea
+                    călătorilor dispunem de 71 de staţii.<br><br>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="img-zoom-container img-box">
+                <img id="myimage" src="{% static 'images/harta-trasee.jpg' %}" alt="harta">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="img-zoom-container img-box">
+                <div id="myresult" class="img-zoom-result"></div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
         {% leaflet_map "main" %}
+      </div>
     </div>
   </section>
   <!-- end contact section -->
@@ -127,10 +155,31 @@
   <section class="info_section layout_padding2">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-lg-3 info-col">
-
+        <div class="col-md-6 col-lg-4 info-col">
+          <div class="info_detail">
+            <h4>
+              Social Media
+            </h4>
+            <p>
+              Link-uri utile pentru <br>social media.
+            </p>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-3 info-col">
+        <div class="col-md-6 col-lg-4 info-col">
           <div class="info_contact">
             <h4>
               Adresă
@@ -139,7 +188,7 @@
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-				  Str. Traian Vuia nr. 5 A, Suceava, 720 021, ROMANIA
+				  Str. Traian Vuia nr. 5 A, <br>Suceava, 720 021, ROMANIA
                 </span>
               </a>
               <a href="">
@@ -157,7 +206,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 info-col">
+        <div class="col-md-6 col-lg-4 info-col">
           <div class="info_contact">
             <h4>
               Abonează-te
@@ -168,13 +217,6 @@
                 Abonează-te
               </button>
             </form>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 info-col">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
-            </div>
           </div>
         </div>
       </div>
