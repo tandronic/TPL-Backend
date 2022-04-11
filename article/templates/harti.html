@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load leaflet_tags %}
 <html>
 
 <head>
@@ -15,7 +16,7 @@
   <link rel="shortcut icon" href="{% static 'images/logoIcon.png' %}" type="">
 
   <title> TPL Suceava </title>
-
+    {% leaflet_css %}
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
@@ -37,7 +38,7 @@
 
   <div class="hero_area">
     <div class="hero_bg_box">
-      <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+      <img src="../../static/images/slider-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -45,7 +46,7 @@
         <div class="container-fluid ">
           <div class="header_top_content">
             <a class="navbar-brand d-none d-lg-flex" href="index.html">
-              <img src="{% static 'images/logo.png' %}" alt="" width="250px">
+              <img src="../../static/images/logo.png" alt="" width="250px">
             </a>
             <div class="contact_nav">
               <a href="">
@@ -68,7 +69,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand d-flex d-lg-none" href="index.html">
-              <img src="{% static 'images/logo.png' %}" alt="" width="150px">
+              <img src="../../static/images/logo.png" alt="" width="150px">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,16 +79,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home-page' %}">Acasă</a>
+                  <a class="nav-link" href="{% url 'home-page' %}">Acasă<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'articles' %}">Anunțuri<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'articles' %}">Anunțuri</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'about-us' %}"> Despre Noi</a>
                 </li>
-				<li class="nav-item">
-                  <a class="nav-link" href="{% url 'maps' %}"> Hărți</a>
+				<li class="nav-item active">
+                  <a class="nav-link" href="despre.html"> Hărți</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'tickets' %}">Bilete & Abonamente</a>
@@ -113,86 +114,13 @@
     <!-- end header section -->
   </div>
 
-  <!-- service section -->
-
-  <section class="service_section layout_padding">
-    <div class="service_container">
-      <div class="container ">
-        <div class="heading_container">
-          <h2>
-            Anunțuri
-          </h2>
-          <p>
-            Pentru a fi mereu la curent cu știrile noastre, verificați zilnic site-ul nostru.
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="../../static/images/anunt1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  REINTRODUCEREA LINIEI 1
-                </h5>
-                <p>
-                  Începând de luni 7 martie a.c. se reintroduce linia 1 de autobuz între orele 7.00 - 19.00 pentru
-                  reducerea timpului de deplasare din zona Obcini - George Enescu în zona Burdujeni.
-                  Plecările sunt din 20 în 20 minute de la Cinema Burdujeni începând cu ora 7.00.<br> Linia 1 are următorul traseu:
-                </p>
-                <a href="./despre.html">
-                  Citește mai mult
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="../../static/images/anunt2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Stația "Bloc IRE" - MUTATĂ
-                </h5>
-                <p>
-                  Vă informăm că începând cu data de 23.02.2022 stația de autobuz "Bloc IRE" a fost mutată după colțul
-                  intersecției și este semnalizată corespunzător cu indicatoarul rutier "Stație autobuz". Prin urmare
-                  autobuzele care circulă pe liniile 4 și 5 nu vor mai opri pe colț înainte de intersecție.
-                </p>
-                <a href="./despre.html">
-                  Citește mai mult
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="../../static/images/anunt3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  ELIBERARE ABONAMENTE ELEVI
-                </h5>
-                <p>
-                  Urmare adresei Primăriei Municipiului Suceava nr. 38297/18.11.2021, prin care a fost dispusă măsura de
-                  a solicita Inspectoratului Scolar Județean Suceava listele actualizate cu data de 01.01.2022
-                  (completată lunar cu eventualele modificări) cu toți beneficiarii de abonamente de elevi
-                </p>
-                <a href="./despre.html">
-                  Citește mai mult
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+        {% leaflet_map "main" %}
     </div>
   </section>
-
-  <!-- end service section -->
+  <!-- end contact section -->
 
   <!-- info section -->
 
@@ -200,28 +128,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-3 info-col">
-          <div class="info_detail">
-            <h4>
-              Social Media
-            </h4>
-            <p>
-              Link-uri utile pentru <br>social media.
-            </p>
-            <div class="info_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
+
         </div>
         <div class="col-md-6 col-lg-3 info-col">
           <div class="info_contact">
@@ -286,7 +193,62 @@
   </footer>
   <!-- footer section -->
 
-  <!-- jQery -->
+  {% leaflet_js %}
+
+    <script src="{% static 'js/leaflet.groupedlayercontrol.min.js' %}"></script>
+    <script src="{% static 'leaflet/Control.FullScreen.js' %}"></script>
+   <script>
+
+      window.addEventListener("map:init", function (event) {
+        var map = event.detail.map;
+        L.control.fullscreen({content: '<img src="{% static 'leaflet/fullscreen.png' %}" ' +
+        'alt="Full-Screen" style="width:26px;height:26px;"/> '}).addTo(map);
+
+        var layers = [];
+        var baseMaps = {};
+        var overlayMaps = {};
+        var style_land = {
+            stroke: true,
+            fill: true,
+            fillOpacity: 0.0,
+            weight: 3,
+            color: 'red',
+            fillColor: 'red'
+        }
+
+
+        <!-- Map panels -->
+        map.createPane("data_layers");
+        map.createPane("lands_pane");
+
+        {% for route in routes %}
+            layer = new L.layerGroup([]).addTo(map);
+            var polygon = L.geoJson(
+                JSON.parse('{% autoescape off %}{{ route.get_json_data }}{% endautoescape %}'),
+                {
+                    style: style_land,
+                    pane: "lands_pane",
+                    onEachFeature: function (feature, layer) {
+                        layer.feature.properties["code"] = "{{ route.name }}";
+                        layer.feature.properties["id"] = "{{ route.name }}";
+                    },
+                }
+            );
+            var list = '<dt>Nume: {{ route.name }}</dt><dt>Autobuze:</dt>';
+            {% for b in route.bus.all %}
+                list += '<dt>Autobuzul - {{ b.name }}</dt>'
+            {% endfor %}
+
+            polygon.bindPopup(list).addTo(layer);
+            overlayMaps["{{ route.name }}"] = layer;
+            layers.push(layer);
+        {% endfor %}
+
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
+      });
+    </script>
+
+ <!-- jQery -->
   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -302,6 +264,7 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
+  <!-- End Google Map -->
   <!-- End Google Map -->
 
 </body>

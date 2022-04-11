@@ -89,7 +89,7 @@
                   <a class="nav-link" href="{% url 'about-us' %}"> Despre Noi</a>
                 </li>
 				<li class="nav-item">
-                  <a class="nav-link" href="despre.html"> Hărți</a>
+                  <a class="nav-link" href="{% url 'maps' %}"> Hărți</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'tickets' %}">Bilete & Abonamente</a>
@@ -142,7 +142,7 @@
                       Nu poţi înţelege un oraş până când nu îi foloseşti sistemul de transport public.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'tickets' %}" class="btn1">
                         Achiziționează un bilet
                       </a>
                     </div>

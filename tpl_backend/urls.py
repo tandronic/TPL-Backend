@@ -9,7 +9,7 @@ from rest_framework.schemas import get_schema_view
 from rest_framework.authtoken import views
 
 
-from article.templates_views import IndexTemplateView, ArticleView, AboutUsView, TicketsView
+from article.templates_views import IndexTemplateView, ArticleView, AboutUsView, TicketsView, MapsView
 from user.templates_views import register, activate
 
 
@@ -29,6 +29,7 @@ urlpatterns = [
     path('articles/', ArticleView.as_view(), name='articles'),
     path('about-us/', AboutUsView.as_view(), name='about-us'),
     path('tickets/', TicketsView.as_view(), name='tickets'),
+    path('maps/', MapsView.as_view(), name='maps'),
     path('api/auth/login/', views.obtain_auth_token),
     path('api/auth/', include('user.urls')),
     path('api/articles/', include('article.urls')),

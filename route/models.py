@@ -30,6 +30,10 @@ class Route(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def get_json_data(self):
+        return self.location.json
+
 
 class Ticket(models.Model):
     type_of_ticket = models.CharField(max_length=50)
