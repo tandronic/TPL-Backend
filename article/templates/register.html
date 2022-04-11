@@ -7,6 +7,8 @@
       <title>Autentificare</title>
 	  <link href="{% static 'css/registerStyle.css' %}" rel="stylesheet" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
    </head>
    <body>
       <div class="wrapper">
@@ -52,20 +54,24 @@
                      Nu ești înregistrat? <a href="">Înregistrează-te acum</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form method="POST" class="signup" id="register-form">
+                   {% csrf_token %}
                   <div class="field">
-                     <input type="text" placeholder="Email" required>
+                     <input type="text" placeholder="Email" required id="id_email">
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Parolă" required>
+                     <input type="password" placeholder="Parolă" required id="id_password_register">
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirmare parolă" required>
+                     <input type="password" placeholder="Confirmare parolă" required id="id_password_register_2">
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" value="Înregistrează-te">
                   </div>
+                   <p class=" label label-danger" id="id_label_info">
+
+                    </p>
                </form>
             </div>
          </div>
@@ -84,10 +90,44 @@
            loginForm.style.marginLeft = "0%";
            loginText.style.marginLeft = "0%";
          });
+
          signupLink.onclick = (()=>{
            signupBtn.click();
            return false;
          });
+
+         $(document).on('submit', '#register-form',function(e){
+            // preventing from page reload and default actions
+            e.preventDefault();
+            // serialize the data for sending the form data.
+            var serializedData = $(this).serialize();
+            // make POST ajax call
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'register-page' %}",
+                data:{
+                    email:$('#id_email').val(),
+                    password:$('#id_password_register').val(),
+                    password_2:$('#id_password_register_2').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                    action: 'post'
+                },
+                success: function (response) {
+                    // 1. clear the form.
+                    $("#register-form").trigger('reset');
+                    // 2. focus to nickname input
+                    $("#id_email").focus();
+
+                    // display the newly friend to table.
+                    $("#id_label_info").text("Contul a fost creat. Va rugam sa confirmati emailul primit.");
+                },
+                error: function (response) {
+                    // alert the error if any error occured
+                    $("#id_label_info").text("ERROR");
+                    alert(response["responseJSON"]["error"]);
+                }
+            })
+        })
       </script>
    </body>
 </html>

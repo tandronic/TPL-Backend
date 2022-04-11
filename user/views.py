@@ -36,7 +36,7 @@ class RegisterAPIView(APIView):
         user = serializer.save(is_active=False)
         mail_subject = _('Activate your TPL account.')
         try:
-            message = render_to_string('acc_active_email.html', {
+            message = render_to_string('acc_active_email_endpoint.html', {
                 'email': user.email,
                 'fronted_domain': settings.FRONTED_DOMAIN,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),

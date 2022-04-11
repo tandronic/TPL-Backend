@@ -8,7 +8,9 @@ from django.contrib.auth import views as auth_views
 from rest_framework.schemas import get_schema_view
 from rest_framework.authtoken import views
 
-from article.templates_views import IndexTemplateView, LoginTemplateView
+
+from article.templates_views import IndexTemplateView, ArticleView, AboutUsView, TicketsView
+from user.templates_views import register, activate
 
 
 admin.site.site_header = 'TPL Backend'
@@ -19,7 +21,14 @@ admin.site.site_title = 'TPL Backend'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexTemplateView.as_view(), name="home-page"),
-    path('login/', auth_views.LoginView.as_view(template_name='register.html'), name='login-page'),
+    path('login/', auth_views.LoginView.as_view(template_name='register.html', redirect_authenticated_user=True),
+         name='login-page'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout-page'),
+    path('register/', register, name='register-page'),
+    path('activate/<uidb64>/<token>/', activate, name='account-activate'),
+    path('articles/', ArticleView.as_view(), name='articles'),
+    path('about-us/', AboutUsView.as_view(), name='about-us'),
+    path('tickets/', TicketsView.as_view(), name='tickets'),
     path('api/auth/login/', views.obtain_auth_token),
     path('api/auth/', include('user.urls')),
     path('api/articles/', include('article.urls')),
