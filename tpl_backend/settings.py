@@ -93,6 +93,8 @@ DATABASES = {
        'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
    }
 
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
 AUTH_USER_MODEL = 'user.User'
 
 # dj-stripe settings
