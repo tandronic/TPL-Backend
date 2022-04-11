@@ -39,8 +39,8 @@
                   </div>
                    {% if form.errors %}
                     <p class=" label label-danger">
-                        Your username and password didn't match.
-                        Please try again.
+                        Email-ul tău și parola nu se potrivesc.
+                        Încearcă din nou.
                     </p>
                 {% endif %}
                   <div class="pass-link">
@@ -123,7 +123,7 @@
                 },
                 error: function (response) {
                     // alert the error if any error occured
-                    $("#id_label_info").text("ERROR");
+                    $("#id_label_info").text("Parolele nu se potrivesc");
                     alert(response["responseJSON"]["error"]);
                 }
             })
