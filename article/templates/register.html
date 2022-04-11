@@ -123,7 +123,7 @@
                 },
                 error: function (response) {
                     // alert the error if any error occured
-                    $("#id_label_info").text("Parolele nu se potrivesc");
+                    $("#id_label_info").text("Date incorecte");
                     alert(response["responseJSON"]["error"]);
                 }
             })
