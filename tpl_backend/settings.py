@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tnxo@t9of2_81_7*%6ftm+fk^_=m&%u_e0rbnkta6*x5xdfpl_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['tpl-mad.herokuapp.com']
 
@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'tpl_backend.wsgi.application'
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = {
-       'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+       'default': os.environ.get('DATABASE_URL'),
    }
 
 AUTH_USER_MODEL = 'user.User'
@@ -187,8 +187,8 @@ LEAFLET_CONFIG = {
 
 FRONTED_DOMAIN = "example.com"
 
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 try:
     from .local_settings import *
