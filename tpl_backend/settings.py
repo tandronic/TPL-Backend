@@ -185,7 +185,8 @@ LEAFLET_CONFIG = {
     'DEFAULT_PRECISION': 6,
     'RESET_VIEW': False,
 }
-
+DEFAULT_FROM_EMAIL = "tpl@suport-tpl.ro"
+SERVER_EMAIL = "tpl@suport-tpl.ro"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
