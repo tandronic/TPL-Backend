@@ -1,5 +1,6 @@
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
+from django.conf import settings
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.template.loader import render_to_string
@@ -33,10 +34,9 @@ def register(request):
                 'token': account_activation_token.make_token(user),
             })
             to_email = user.email
-            email = EmailMessage(
-                mail_subject, message, to=[to_email]
+            send_mail(
+                mail_subject, message, settings.DEFAULT_FROM_EMAIL, [to_email]
             )
-            email.send()
         except:
             user.delete()
             return JsonResponse(
